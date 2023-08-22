@@ -1,34 +1,36 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-
+- affirm
+- ask_film
+- bot_challenge
+- deny
+- goodbye
+- greet
+- mood_great
+- mood_unhappy
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
+  - text: Hey! How are you?
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
   utter_did_that_help:
-  - text: "Did that help you?"
-
+  - text: Did that help you?
   utter_happy:
-  - text: "Great, carry on!"
-
+  - text: Great, carry on!
   utter_goodbye:
-  - text: "Bye"
-
+  - text: Bye
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
+  - text: I am a bot, powered by Rasa.
+  utter_film:
+  - text: Batman is a great film.
+  - text: Have you watched Alice in Wonderland? I think you will love it.
+  - text: What about Charlie and the Chocolate Factory?
+  - text: If you liked Batman, you're going to love Batman Returns.
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+actions:
+- utter_goodbye
+- utter_film
+- utter_greet
